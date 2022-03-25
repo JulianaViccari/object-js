@@ -23,7 +23,7 @@ let cliente = {
 }
 let relatorio = "";
 
-for(let info in cliente){
+for(let info in cliente){ //percorre o objeto pela string da chave.
     if(typeof cliente[info] === "object" || typeof cliente[info] === "function"){
         continue;
     }else{
