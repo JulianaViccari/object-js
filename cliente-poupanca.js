@@ -7,6 +7,20 @@ function Cliente(nome,cpf,email,saldo){
     this.saldo += valor
   }
 }
-const juliana = new Cliente("Juliana", "255365254-55", "ju@gmail.com", 200)
+
+function ClientePoupanca(nome,cpf,email,saldo,saldoPoup){
+    Cliente.call(this,nome,cpf,email,saldo)
+    this.saldoPoup = saldoPoup
+}
+const juliana = new ClientePoupanca("Juliana", "255365254-55", "ju@gmail.com", 200,245)
 
 console.log(juliana);
+
+ClientePoupanca.prototype.depositarPoup = function (valor){ // adiciona ao protopipo ClientePoup um novo metódo
+  this.saldoPoup += valor
+}
+
+juliana.depositarPoup(154)
+
+console.log(`${juliana.nome}, seu saldo na poupança é: ${juliana.saldoPoup}`)
+
